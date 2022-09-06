@@ -10,10 +10,16 @@ import SwiftUI
 struct SmallGridItem: View {
     let title: String
     let color: Color
+    let icon: String
     var body: some View {
         HStack {
             Rectangle().fill(color)
                 .frame(width: 60, height: 60)
+                .overlay {
+                    Image(systemName: icon)
+                        .font(.title3)
+                        .foregroundColor(.white)
+                }
             
             Text(title)
                 .foregroundColor(.white)
@@ -27,6 +33,6 @@ struct SmallGridItem: View {
 
 struct SmallGridItem_Previews: PreviewProvider {
     static var previews: some View {
-        SmallGridItem(title: "Playlist", color: .green)
+        SmallGridItem(title: "Playlist", color: .green, icon: "star")
     }
 }

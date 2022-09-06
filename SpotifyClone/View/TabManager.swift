@@ -57,9 +57,11 @@ extension TabManager {
                 }
             }
         }
-        .frame(height: 90)
+        .frame(height: 110)
+        .padding(.bottom, 10)
         .background {
-            LinearGradient(colors: [.black, .black, .clear], startPoint: .bottom, endPoint: .top)
+            LinearGradient(colors: [.black, .black, .black, .clear], startPoint: .bottom, endPoint: .top)
         }
+        
     }
 }

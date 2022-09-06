@@ -38,6 +38,18 @@ enum HeaderPlaylists: CaseIterable {
             return "My Playlist 2"
         }
     }
+    var icon: String {
+        switch self {
+        case .favourites:
+            return "heart"
+        case .explore:
+            return "magnifyingglass"
+        case .myPlaylist1:
+            return "face.smiling"
+        case .myPlaylist2:
+            return "hand.thumbsup"
+        }
+    }
     
     var color: Color {
         switch self {

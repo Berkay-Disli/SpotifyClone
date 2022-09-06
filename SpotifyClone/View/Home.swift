@@ -41,7 +41,7 @@ struct Home: View {
                     // Header Playlists
                     LazyVGrid(columns: columns) {
                         ForEach(HeaderPlaylists.allCases, id:\.self) { item in
-                            SmallGridItem(title: item.title, color: item.color)
+                            SmallGridItem(title: item.title, color: item.color, icon: item.icon)
                         }
                     }
                     .padding([.horizontal, .bottom])
@@ -137,7 +137,7 @@ struct Home: View {
                         .frame(height: 185)
                         .padding(.bottom)
                     }
-                    .padding(.bottom, 66)
+                    .padding(.bottom, 80)
                     
                     Spacer()
                 }
