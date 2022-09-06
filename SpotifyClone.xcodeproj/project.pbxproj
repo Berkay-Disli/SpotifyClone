@@ -11,6 +11,11 @@
 		23E0908528C7632A0059ADD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0908428C7632A0059ADD2 /* ContentView.swift */; };
 		23E0908728C7632B0059ADD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23E0908628C7632B0059ADD2 /* Assets.xcassets */; };
 		23E0908A28C7632B0059ADD2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23E0908928C7632B0059ADD2 /* Preview Assets.xcassets */; };
+		23E0909528C763CE0059ADD2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0909428C763CE0059ADD2 /* Home.swift */; };
+		23E0909728C766C40059ADD2 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0909628C766C40059ADD2 /* Enums.swift */; };
+		23E0909928C76DB30059ADD2 /* IconSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0909828C76DB30059ADD2 /* IconSmall.swift */; };
+		23E0909B28C770A60059ADD2 /* SmallGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0909A28C770A60059ADD2 /* SmallGridItem.swift */; };
+		23E0909D28C775750059ADD2 /* LargeHStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0909C28C775750059ADD2 /* LargeHStackItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		23E0908428C7632A0059ADD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		23E0908628C7632B0059ADD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23E0908928C7632B0059ADD2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		23E0909428C763CE0059ADD2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		23E0909628C766C40059ADD2 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		23E0909828C76DB30059ADD2 /* IconSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSmall.swift; sourceTree = "<group>"; };
+		23E0909A28C770A60059ADD2 /* SmallGridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallGridItem.swift; sourceTree = "<group>"; };
+		23E0909C28C775750059ADD2 /* LargeHStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeHStackItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,10 @@
 		23E0908128C7632A0059ADD2 /* SpotifyClone */ = {
 			isa = PBXGroup;
 			children = (
+				23E0909328C763C30059ADD2 /* Components */,
+				23E0909228C763A00059ADD2 /* Model */,
+				23E0909128C7639D0059ADD2 /* ViewModel */,
+				23E0909028C7639B0059ADD2 /* View */,
 				23E0908228C7632A0059ADD2 /* SpotifyCloneApp.swift */,
 				23E0908428C7632A0059ADD2 /* ContentView.swift */,
 				23E0908628C7632B0059ADD2 /* Assets.xcassets */,
@@ -65,6 +79,39 @@
 				23E0908928C7632B0059ADD2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		23E0909028C7639B0059ADD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				23E0909428C763CE0059ADD2 /* Home.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		23E0909128C7639D0059ADD2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		23E0909228C763A00059ADD2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23E0909628C766C40059ADD2 /* Enums.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		23E0909328C763C30059ADD2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				23E0909828C76DB30059ADD2 /* IconSmall.swift */,
+				23E0909A28C770A60059ADD2 /* SmallGridItem.swift */,
+				23E0909C28C775750059ADD2 /* LargeHStackItem.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +185,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				23E0908528C7632A0059ADD2 /* ContentView.swift in Sources */,
+				23E0909928C76DB30059ADD2 /* IconSmall.swift in Sources */,
+				23E0909D28C775750059ADD2 /* LargeHStackItem.swift in Sources */,
+				23E0909B28C770A60059ADD2 /* SmallGridItem.swift in Sources */,
+				23E0909528C763CE0059ADD2 /* Home.swift in Sources */,
 				23E0908328C7632A0059ADD2 /* SpotifyCloneApp.swift in Sources */,
+				23E0909728C766C40059ADD2 /* Enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
