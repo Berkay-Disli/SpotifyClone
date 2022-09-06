@@ -43,6 +43,7 @@ extension TabManager {
                         
                         Text(tab.title)
                             .font(.callout)
+                            .fontWeight(navVM.selectedTab == tab ? .medium:.regular)
                     }
                     .foregroundColor(.white)
                     .padding(.horizontal)

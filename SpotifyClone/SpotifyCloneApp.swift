@@ -13,6 +13,7 @@ struct SpotifyCloneApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(NavigationViewModel())
+                .preferredColorScheme(.dark)
         }
     }
 }

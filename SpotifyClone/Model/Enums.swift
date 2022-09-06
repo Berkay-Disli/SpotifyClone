@@ -45,7 +45,7 @@ enum HeaderPlaylists: CaseIterable {
         case .explore:
             return "magnifyingglass"
         case .myPlaylist1:
-            return "face.smiling"
+            return "face.smiling.fill"
         case .myPlaylist2:
             return "hand.thumbsup"
         }
@@ -87,6 +87,24 @@ enum Tabs: CaseIterable {
             return "magnifyingglass.circle"
         case .library:
             return "list.bullet.rectangle.portrait"
+        }
+    }
+}
+
+
+enum UserSearchGrid: String, CaseIterable {
+    case rock, hiphop, pop, indie
+    
+    var title: String {
+        switch self {
+        case .rock:
+            return "Rock"
+        case .hiphop:
+            return "Hiphop"
+        case .pop:
+            return "Pop"
+        case .indie:
+            return "Indie"
         }
     }
 }

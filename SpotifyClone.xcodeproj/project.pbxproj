@@ -10,6 +10,8 @@
 		2325CE5628C77BF2000944D7 /* TabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2325CE5528C77BF2000944D7 /* TabManager.swift */; };
 		2325CE5828C77F04000944D7 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2325CE5728C77F04000944D7 /* NavigationViewModel.swift */; };
 		2325CE5A28C784D0000944D7 /* MediumHStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2325CE5928C784D0000944D7 /* MediumHStackItem.swift */; };
+		23884A5E28C7C526006F226B /* LargeGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23884A5D28C7C526006F226B /* LargeGridItem.swift */; };
+		238AEE1528C7B2EF00F67726 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238AEE1428C7B2EF00F67726 /* Search.swift */; };
 		2390B75128C78AE7006BF1B2 /* MusicsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2390B75028C78AE7006BF1B2 /* MusicsViewModel.swift */; };
 		2390B75328C78E85006BF1B2 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2390B75228C78E85006BF1B2 /* Music.swift */; };
 		2390B75628C79496006BF1B2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2390B75528C79496006BF1B2 /* Alamofire */; };
@@ -29,6 +31,8 @@
 		2325CE5528C77BF2000944D7 /* TabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManager.swift; sourceTree = "<group>"; };
 		2325CE5728C77F04000944D7 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		2325CE5928C784D0000944D7 /* MediumHStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumHStackItem.swift; sourceTree = "<group>"; };
+		23884A5D28C7C526006F226B /* LargeGridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeGridItem.swift; sourceTree = "<group>"; };
+		238AEE1428C7B2EF00F67726 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		2390B75028C78AE7006BF1B2 /* MusicsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicsViewModel.swift; sourceTree = "<group>"; };
 		2390B75228C78E85006BF1B2 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		23E0907F28C7632A0059ADD2 /* SpotifyClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				23E0909428C763CE0059ADD2 /* Home.swift */,
+				238AEE1428C7B2EF00F67726 /* Search.swift */,
 				2325CE5528C77BF2000944D7 /* TabManager.swift */,
 			);
 			path = View;
@@ -127,6 +132,7 @@
 			children = (
 				23E0909828C76DB30059ADD2 /* IconSmall.swift */,
 				23E0909A28C770A60059ADD2 /* SmallGridItem.swift */,
+				23884A5D28C7C526006F226B /* LargeGridItem.swift */,
 				23E0909C28C775750059ADD2 /* LargeHStackItem.swift */,
 				2325CE5928C784D0000944D7 /* MediumHStackItem.swift */,
 			);
@@ -211,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				238AEE1528C7B2EF00F67726 /* Search.swift in Sources */,
 				2325CE5828C77F04000944D7 /* NavigationViewModel.swift in Sources */,
 				2390B75128C78AE7006BF1B2 /* MusicsViewModel.swift in Sources */,
 				23E0908528C7632A0059ADD2 /* ContentView.swift in Sources */,
@@ -220,6 +227,7 @@
 				23E0909B28C770A60059ADD2 /* SmallGridItem.swift in Sources */,
 				23E0909528C763CE0059ADD2 /* Home.swift in Sources */,
 				2325CE5628C77BF2000944D7 /* TabManager.swift in Sources */,
+				23884A5E28C7C526006F226B /* LargeGridItem.swift in Sources */,
 				23E0908328C7632A0059ADD2 /* SpotifyCloneApp.swift in Sources */,
 				23E0909728C766C40059ADD2 /* Enums.swift in Sources */,
 				2390B75328C78E85006BF1B2 /* Music.swift in Sources */,

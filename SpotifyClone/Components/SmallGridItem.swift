@@ -26,7 +26,7 @@ struct SmallGridItem: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .center)
-        .background(.ultraThinMaterial.opacity(0.33))
+        .background(.ultraThinMaterial.opacity(0.7))
         .cornerRadius(5)
     }
 }
