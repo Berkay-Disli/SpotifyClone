@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct Home: View {
+    @ObservedObject var musicsVM: MusicsViewModel
     let columns: [GridItem] = [GridItem(.flexible()),
                                GridItem(.flexible())]
     
@@ -44,31 +46,40 @@ struct Home: View {
                     }
                     .padding([.horizontal, .bottom])
                     
-                    // Keep Listening
+                    // Rock
                     VStack {
-                        Text("Keep listening")
+                        Text("Rock")
                             .font(.title)
                             .fontWeight(.medium)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading)
                         
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            LazyHStack(spacing: 16) {
-                                ForEach(1...6, id:\.self) { item in
-                                    LargeHStackItem(showArtist: true)
+                        if !musicsVM.genreSongs.isEmpty {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                LazyHStack(spacing: 16) {
+                                    ForEach(musicsVM.genreSongs.prefix(5)) { item in
+                                        LargeHStackItem(showArtist: true, title: item.trackName, artist: item.artistName, imageUrl: item.artworkUrl100)
+                                    }
                                 }
+                                .padding(.horizontal)
                             }
-                            .padding(.horizontal)
-                        }
-                        .frame(height: 210)
+                            .frame(height: 210)
                         .padding(.bottom)
+                        } else {
+                            ProgressView()
+                                .frame(maxWidth: .infinity, maxHeight: 210, alignment: .center)
+                        }
+                    }
+                    .onAppear {
+                        musicsVM.getSongs(searchType: .genre, term: "Rock", limit: 10)
                     }
                     
                     // For the fans
                     VStack {
                         HStack(spacing: 12) {
-                            Circle().fill(.gray)
+                            KFImage(URL(string: musicsVM.artistSongs.last?.artworkUrl60 ?? "https://via.placeholder.com/50"))
+                                .clipShape(Circle())
                                 .frame(width: 50, height: 50)
                             
                             VStack(alignment: .leading) {
@@ -85,16 +96,25 @@ struct Home: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading)
                         
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            LazyHStack(spacing: 16) {
-                                ForEach(1...6, id:\.self) { item in
-                                    LargeHStackItem(showArtist: false)
+                        if !musicsVM.artistSongs.isEmpty {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                LazyHStack(spacing: 16) {
+                                    ForEach(musicsVM.artistSongs.prefix(5)) { item in
+                                        LargeHStackItem(showArtist: false, title: item.trackName, artist: "", imageUrl: item.artworkUrl100) // Change
+                                    }
                                 }
+                                .padding(.horizontal)
                             }
-                            .padding(.horizontal)
+                            .frame(height: 185)
+                            .padding(.bottom)
+                        } else {
+                            ProgressView()
+                                .frame(maxWidth: .infinity, maxHeight: 210, alignment: .center)
+                                
                         }
-                        .frame(height: 185)
-                        .padding(.bottom)
+                    }
+                    .onAppear {
+                        musicsVM.getSongs(searchType: .artist, term: "Blackfield", limit: 10)
                     }
                     
                     // Recently Played
@@ -129,6 +149,6 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        Home(musicsVM: MusicsViewModel())
     }
 }

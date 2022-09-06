@@ -9,11 +9,12 @@ import SwiftUI
 
 struct TabManager: View {
     @EnvironmentObject var navVM: NavigationViewModel
+    @StateObject var musicsVM = MusicsViewModel()
     
     var body: some View {
         ZStack(alignment: .bottom) {
             // MARK: Displayed Page
-            Home()
+            Home(musicsVM: musicsVM)
             
             // MARK: TabView
             tabView

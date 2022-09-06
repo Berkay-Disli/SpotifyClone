@@ -10,6 +10,10 @@
 		2325CE5628C77BF2000944D7 /* TabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2325CE5528C77BF2000944D7 /* TabManager.swift */; };
 		2325CE5828C77F04000944D7 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2325CE5728C77F04000944D7 /* NavigationViewModel.swift */; };
 		2325CE5A28C784D0000944D7 /* MediumHStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2325CE5928C784D0000944D7 /* MediumHStackItem.swift */; };
+		2390B75128C78AE7006BF1B2 /* MusicsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2390B75028C78AE7006BF1B2 /* MusicsViewModel.swift */; };
+		2390B75328C78E85006BF1B2 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2390B75228C78E85006BF1B2 /* Music.swift */; };
+		2390B75628C79496006BF1B2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2390B75528C79496006BF1B2 /* Alamofire */; };
+		2390B75928C79EF7006BF1B2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2390B75828C79EF7006BF1B2 /* Kingfisher */; };
 		23E0908328C7632A0059ADD2 /* SpotifyCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0908228C7632A0059ADD2 /* SpotifyCloneApp.swift */; };
 		23E0908528C7632A0059ADD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0908428C7632A0059ADD2 /* ContentView.swift */; };
 		23E0908728C7632B0059ADD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23E0908628C7632B0059ADD2 /* Assets.xcassets */; };
@@ -25,6 +29,8 @@
 		2325CE5528C77BF2000944D7 /* TabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManager.swift; sourceTree = "<group>"; };
 		2325CE5728C77F04000944D7 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		2325CE5928C784D0000944D7 /* MediumHStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumHStackItem.swift; sourceTree = "<group>"; };
+		2390B75028C78AE7006BF1B2 /* MusicsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicsViewModel.swift; sourceTree = "<group>"; };
+		2390B75228C78E85006BF1B2 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		23E0907F28C7632A0059ADD2 /* SpotifyClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23E0908228C7632A0059ADD2 /* SpotifyCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyCloneApp.swift; sourceTree = "<group>"; };
 		23E0908428C7632A0059ADD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2390B75928C79EF7006BF1B2 /* Kingfisher in Frameworks */,
+				2390B75628C79496006BF1B2 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				2325CE5728C77F04000944D7 /* NavigationViewModel.swift */,
+				2390B75028C78AE7006BF1B2 /* MusicsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -108,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				23E0909628C766C40059ADD2 /* Enums.swift */,
+				2390B75228C78E85006BF1B2 /* Music.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +149,10 @@
 			dependencies = (
 			);
 			name = SpotifyClone;
+			packageProductDependencies = (
+				2390B75528C79496006BF1B2 /* Alamofire */,
+				2390B75828C79EF7006BF1B2 /* Kingfisher */,
+			);
 			productName = SpotifyClone;
 			productReference = 23E0907F28C7632A0059ADD2 /* SpotifyClone.app */;
 			productType = "com.apple.product-type.application";
@@ -167,6 +181,10 @@
 				Base,
 			);
 			mainGroup = 23E0907628C7632A0059ADD2;
+			packageReferences = (
+				2390B75428C79496006BF1B2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2390B75728C79EF7006BF1B2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 23E0908028C7632A0059ADD2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -194,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2325CE5828C77F04000944D7 /* NavigationViewModel.swift in Sources */,
+				2390B75128C78AE7006BF1B2 /* MusicsViewModel.swift in Sources */,
 				23E0908528C7632A0059ADD2 /* ContentView.swift in Sources */,
 				23E0909928C76DB30059ADD2 /* IconSmall.swift in Sources */,
 				2325CE5A28C784D0000944D7 /* MediumHStackItem.swift in Sources */,
@@ -203,6 +222,7 @@
 				2325CE5628C77BF2000944D7 /* TabManager.swift in Sources */,
 				23E0908328C7632A0059ADD2 /* SpotifyCloneApp.swift in Sources */,
 				23E0909728C766C40059ADD2 /* Enums.swift in Sources */,
+				2390B75328C78E85006BF1B2 /* Music.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +423,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2390B75428C79496006BF1B2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		2390B75728C79EF7006BF1B2 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2390B75528C79496006BF1B2 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2390B75428C79496006BF1B2 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		2390B75828C79EF7006BF1B2 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2390B75728C79EF7006BF1B2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 23E0907728C7632A0059ADD2 /* Project object */;
 }
