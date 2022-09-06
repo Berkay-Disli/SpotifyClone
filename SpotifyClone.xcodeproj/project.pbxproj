@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2325CE5628C77BF2000944D7 /* TabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2325CE5528C77BF2000944D7 /* TabManager.swift */; };
+		2325CE5828C77F04000944D7 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2325CE5728C77F04000944D7 /* NavigationViewModel.swift */; };
+		2325CE5A28C784D0000944D7 /* MediumHStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2325CE5928C784D0000944D7 /* MediumHStackItem.swift */; };
 		23E0908328C7632A0059ADD2 /* SpotifyCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0908228C7632A0059ADD2 /* SpotifyCloneApp.swift */; };
 		23E0908528C7632A0059ADD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0908428C7632A0059ADD2 /* ContentView.swift */; };
 		23E0908728C7632B0059ADD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23E0908628C7632B0059ADD2 /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2325CE5528C77BF2000944D7 /* TabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManager.swift; sourceTree = "<group>"; };
+		2325CE5728C77F04000944D7 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
+		2325CE5928C784D0000944D7 /* MediumHStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumHStackItem.swift; sourceTree = "<group>"; };
 		23E0907F28C7632A0059ADD2 /* SpotifyClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23E0908228C7632A0059ADD2 /* SpotifyCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyCloneApp.swift; sourceTree = "<group>"; };
 		23E0908428C7632A0059ADD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				23E0909428C763CE0059ADD2 /* Home.swift */,
+				2325CE5528C77BF2000944D7 /* TabManager.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -92,6 +99,7 @@
 		23E0909128C7639D0059ADD2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2325CE5728C77F04000944D7 /* NavigationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -110,6 +118,7 @@
 				23E0909828C76DB30059ADD2 /* IconSmall.swift */,
 				23E0909A28C770A60059ADD2 /* SmallGridItem.swift */,
 				23E0909C28C775750059ADD2 /* LargeHStackItem.swift */,
+				2325CE5928C784D0000944D7 /* MediumHStackItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -184,11 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2325CE5828C77F04000944D7 /* NavigationViewModel.swift in Sources */,
 				23E0908528C7632A0059ADD2 /* ContentView.swift in Sources */,
 				23E0909928C76DB30059ADD2 /* IconSmall.swift in Sources */,
+				2325CE5A28C784D0000944D7 /* MediumHStackItem.swift in Sources */,
 				23E0909D28C775750059ADD2 /* LargeHStackItem.swift in Sources */,
 				23E0909B28C770A60059ADD2 /* SmallGridItem.swift in Sources */,
 				23E0909528C763CE0059ADD2 /* Home.swift in Sources */,
+				2325CE5628C77BF2000944D7 /* TabManager.swift in Sources */,
 				23E0908328C7632A0059ADD2 /* SpotifyCloneApp.swift in Sources */,
 				23E0909728C766C40059ADD2 /* Enums.swift in Sources */,
 			);

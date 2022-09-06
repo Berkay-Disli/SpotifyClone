@@ -18,7 +18,7 @@ struct Home: View {
                            endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 // MARK: Main Stack
                 LazyVStack {
                     // Header
@@ -53,7 +53,7 @@ struct Home: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading)
                         
-                        ScrollView(.horizontal) {
+                        ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack(spacing: 16) {
                                 ForEach(1...6, id:\.self) { item in
                                     LargeHStackItem(showArtist: true)
@@ -74,7 +74,7 @@ struct Home: View {
                             VStack(alignment: .leading) {
                                 Text("For the fans".uppercased())
                                     .font(.callout)
-                                    .foregroundColor(.gray)
+                                    .foregroundColor(Color(uiColor: .lightGray))
                                 
                                 Text("Blackfield")
                                     .font(.title)
@@ -85,7 +85,7 @@ struct Home: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading)
                         
-                        ScrollView(.horizontal) {
+                        ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack(spacing: 16) {
                                 ForEach(1...6, id:\.self) { item in
                                     LargeHStackItem(showArtist: false)
@@ -93,8 +93,31 @@ struct Home: View {
                             }
                             .padding(.horizontal)
                         }
-                        .frame(height: 210)
+                        .frame(height: 185)
+                        .padding(.bottom)
                     }
+                    
+                    // Recently Played
+                    VStack {
+                        Text("Recently played")
+                            .font(.title)
+                            .fontWeight(.medium)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHStack(spacing: 16) {
+                                ForEach(1...6, id:\.self) { item in
+                                    MediumHStackItem()
+                                }
+                            }
+                            .padding(.horizontal)
+                        }
+                        .frame(height: 185)
+                        .padding(.bottom)
+                    }
+                    .padding(.bottom, 66)
                     
                     Spacer()
                 }
