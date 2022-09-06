@@ -43,13 +43,30 @@ struct Search: View {
                                 .fontWeight(.medium)
                             
                             LazyVGrid(columns: userColumns) {
-                                ForEach(UserSearchGrid.allCases, id:\.self) { item in
+                                ForEach(UserFavouriteGenres.allCases, id:\.self) { item in
                                     LargeGridItem(title: item.title, color: self.colors.randomElement() ?? .black)
                                 }
                             }
                         }
                         .padding(.horizontal)
                     }
+                    .padding(.bottom)
+                    
+                    LazyVStack {
+                        // Your favourites
+                        VStack(alignment: .leading) {
+                            Text("Explore all")
+                                .fontWeight(.medium)
+                            
+                            LazyVGrid(columns: userColumns) {
+                                ForEach(AllGenres.allCases, id:\.self) { item in
+                                    LargeGridItem(title: item.title, color: self.colors.randomElement() ?? .black)
+                                }
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    .padding(.bottom, 76)
                 }
             }
             .navigationTitle("Search")
