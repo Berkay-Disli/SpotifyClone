@@ -65,32 +65,6 @@ enum HeaderPlaylists: CaseIterable {
     }
 }
 
-enum Tabs: CaseIterable {
-    case home, search, library
-    
-    var title: String {
-        switch self {
-        case .home:
-            return "Home"
-        case .search:
-            return "Search"
-        case .library:
-            return "Library"
-        }
-    }
-    
-    var icon: String {
-        switch self {
-        case .home:
-            return "music.note.house"
-        case .search:
-            return "magnifyingglass.circle"
-        case .library:
-            return "list.bullet.rectangle.portrait"
-        }
-    }
-}
-
 
 enum UserFavouriteGenres: String, CaseIterable {
     case rock, hiphop, pop, indie

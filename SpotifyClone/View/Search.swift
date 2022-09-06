@@ -18,6 +18,14 @@ struct Search: View {
                 Color.black.ignoresSafeArea()
                 
                 ScrollView {
+                    Text("Search")
+                        .font(.title)
+                        .fontWeight(.medium)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding([.leading, .top])
+                        .padding(.bottom, -0.01) // SwiftUI beta bug-fix
+                    
                     HStack {
                         Image(systemName: "magnifyingglass")
                             .font(.title3)
@@ -69,7 +77,6 @@ struct Search: View {
                     .padding(.bottom, 76)
                 }
             }
-            .navigationTitle("Search")
         }
         
     }

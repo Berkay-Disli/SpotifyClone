@@ -14,10 +14,21 @@ struct TabManager: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             // MARK: Displayed Page
-            Home(musicsVM: musicsVM)
+            switch navVM.selectedTab {
+            case .home:
+                Home(musicsVM: musicsVM)
+                    .transition(AnyTransition.opacity.animation(.easeInOut))
+            case .search:
+                Search()
+                    .transition(AnyTransition.opacity.animation(.easeInOut))
+            case .library:
+                Text("Library View")
+                    .transition(AnyTransition.opacity.animation(.easeInOut))
+            }
             
             // MARK: TabView
             tabView
+                .zIndex(1)
         }
         .edgesIgnoringSafeArea(.bottom)
     }
