@@ -19,7 +19,7 @@ struct TabManager: View {
                 Home(musicsVM: musicsVM)
                     .transition(AnyTransition.opacity.animation(.easeInOut))
             case .search:
-                Search()
+                Search(musicsVM: musicsVM)
                     .transition(AnyTransition.opacity.animation(.easeInOut))
             case .library:
                 Text("Library View")

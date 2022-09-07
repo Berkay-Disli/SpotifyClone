@@ -137,7 +137,7 @@ struct Home: View {
                         .frame(height: 185)
                         .padding(.bottom)
                     }
-                    .padding(.bottom, 80)
+                    .padding(.bottom, 85)
                     .onAppear {
                         musicsVM.getSongs(searchType: .songName, term: "rain", limit: 10)
                     }

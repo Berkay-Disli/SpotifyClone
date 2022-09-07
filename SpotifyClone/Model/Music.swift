@@ -27,4 +27,5 @@ struct Result: Identifiable, Codable {
 
 enum SearchType: String {
     case genre, artist, songName
+    case generalSearch
 }

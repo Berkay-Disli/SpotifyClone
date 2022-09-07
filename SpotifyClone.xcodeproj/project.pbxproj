@@ -10,6 +10,8 @@
 		2325CE5628C77BF2000944D7 /* TabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2325CE5528C77BF2000944D7 /* TabManager.swift */; };
 		2325CE5828C77F04000944D7 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2325CE5728C77F04000944D7 /* NavigationViewModel.swift */; };
 		2325CE5A28C784D0000944D7 /* MediumHStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2325CE5928C784D0000944D7 /* MediumHStackItem.swift */; };
+		2370636528C8B61400CE9BDE /* SearchCategoriesSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2370636428C8B61300CE9BDE /* SearchCategoriesSubView.swift */; };
+		2370636728C8C2DC00CE9BDE /* SearchResultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2370636628C8C2DC00CE9BDE /* SearchResultItem.swift */; };
 		23884A5E28C7C526006F226B /* LargeGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23884A5D28C7C526006F226B /* LargeGridItem.swift */; };
 		23884A6028C7CE12006F226B /* NavigationTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23884A5F28C7CE12006F226B /* NavigationTabs.swift */; };
 		238AEE1528C7B2EF00F67726 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238AEE1428C7B2EF00F67726 /* Search.swift */; };
@@ -32,6 +34,8 @@
 		2325CE5528C77BF2000944D7 /* TabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManager.swift; sourceTree = "<group>"; };
 		2325CE5728C77F04000944D7 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		2325CE5928C784D0000944D7 /* MediumHStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumHStackItem.swift; sourceTree = "<group>"; };
+		2370636428C8B61300CE9BDE /* SearchCategoriesSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoriesSubView.swift; sourceTree = "<group>"; };
+		2370636628C8C2DC00CE9BDE /* SearchResultItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultItem.swift; sourceTree = "<group>"; };
 		23884A5D28C7C526006F226B /* LargeGridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeGridItem.swift; sourceTree = "<group>"; };
 		23884A5F28C7CE12006F226B /* NavigationTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTabs.swift; sourceTree = "<group>"; };
 		238AEE1428C7B2EF00F67726 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -62,6 +66,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2370636228C8B55C00CE9BDE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				23E0909428C763CE0059ADD2 /* Home.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2370636328C8B56500CE9BDE /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				238AEE1428C7B2EF00F67726 /* Search.swift */,
+				2370636428C8B61300CE9BDE /* SearchCategoriesSubView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		23E0907628C7632A0059ADD2 = {
 			isa = PBXGroup;
 			children = (
@@ -104,8 +125,8 @@
 		23E0909028C7639B0059ADD2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				23E0909428C763CE0059ADD2 /* Home.swift */,
-				238AEE1428C7B2EF00F67726 /* Search.swift */,
+				2370636228C8B55C00CE9BDE /* Home */,
+				2370636328C8B56500CE9BDE /* Search */,
 				2325CE5528C77BF2000944D7 /* TabManager.swift */,
 			);
 			path = View;
@@ -138,6 +159,7 @@
 				23884A5D28C7C526006F226B /* LargeGridItem.swift */,
 				23E0909C28C775750059ADD2 /* LargeHStackItem.swift */,
 				2325CE5928C784D0000944D7 /* MediumHStackItem.swift */,
+				2370636628C8C2DC00CE9BDE /* SearchResultItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -229,6 +251,8 @@
 				2325CE5A28C784D0000944D7 /* MediumHStackItem.swift in Sources */,
 				23E0909D28C775750059ADD2 /* LargeHStackItem.swift in Sources */,
 				23E0909B28C770A60059ADD2 /* SmallGridItem.swift in Sources */,
+				2370636528C8B61400CE9BDE /* SearchCategoriesSubView.swift in Sources */,
+				2370636728C8C2DC00CE9BDE /* SearchResultItem.swift in Sources */,
 				23E0909528C763CE0059ADD2 /* Home.swift in Sources */,
 				2325CE5628C77BF2000944D7 /* TabManager.swift in Sources */,
 				23884A5E28C7C526006F226B /* LargeGridItem.swift in Sources */,

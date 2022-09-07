@@ -9,8 +9,7 @@ import SwiftUI
 
 struct Search: View {
     @State private var searchText = ""
-    let userColumns = [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)]
-    let colors: [Color] = [.purple, .orange, .red, .green, .pink, .blue, .brown]
+    @ObservedObject var musicsVM: MusicsViewModel
     
     var body: some View {
         NavigationView {
@@ -53,51 +52,36 @@ struct Search: View {
                     
                     
                     if searchText.isEmpty {
-                        ScrollView {
-                            LazyVStack {
-                                // Your favourites
-                                VStack(alignment: .leading) {
-                                    Text("Your favourite genres")
-                                        .fontWeight(.medium)
-                                        .padding(.top)
-                                    
-                                    LazyVGrid(columns: userColumns) {
-                                        ForEach(UserFavouriteGenres.allCases, id:\.self) { item in
-                                            LargeGridItem(title: item.title, color: self.colors.randomElement() ?? .black)
-                                        }
-                                    }
-                                }
-                                .padding(.horizontal)
-                            }
-                            .padding(.bottom)
-                            
-                            LazyVStack {
-                                // Your favourites
-                                VStack(alignment: .leading) {
-                                    Text("Explore all")
-                                        .fontWeight(.medium)
-                                    
-                                    LazyVGrid(columns: userColumns) {
-                                        ForEach(AllGenres.allCases, id:\.self) { item in
-                                            LargeGridItem(title: item.title, color: self.colors.randomElement() ?? .black)
-                                        }
-                                    }
-                                }
-                                .padding(.horizontal)
-                            }
-                            .padding(.bottom, 76)
-                        }
+                        SearchCategoriesSubView()
                         .transition(AnyTransition.opacity.animation(.easeInOut))
                     } else {
-                        VStack {
-                            Spacer()
-                            Text(searchText)
-                                .font(.largeTitle)
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
-                            Spacer()
+                        if searchText.count > 2 {
+                            ScrollView {
+                                LazyVStack(spacing: 12) {
+                                    ForEach(musicsVM.generalSearchResults) { item in
+                                        SearchResultItem(trackName: item.trackName, artistName: item.artistName, imageUrl: item.artworkUrl60)
+                                    }
+                                }
+                                .padding(.bottom, 85)
+                            }
+                            .padding(.horizontal)
+                            .transition(AnyTransition.opacity.animation(.easeInOut))
+                            .onAppear {
+                                musicsVM.getSongs(searchType: .generalSearch, term: searchText, limit: 20)
+                            }
+                            .onChange(of: searchText) { newTerm in
+                                musicsVM.getSongs(searchType: .generalSearch, term: newTerm, limit: 20)
+                            }
+                        } else {
+                            VStack {
+                                Spacer()
+                                Text("Search something 🥳")
+                                    .font(.largeTitle)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.white)
+                                Spacer()
+                            }
                         }
-                        .transition(AnyTransition.opacity.animation(.easeInOut))
                     }
                 }
             }
@@ -108,7 +92,7 @@ struct Search: View {
 
 struct Search_Previews: PreviewProvider {
     static var previews: some View {
-        Search()
+        Search(musicsVM: MusicsViewModel())
     }
 }
 

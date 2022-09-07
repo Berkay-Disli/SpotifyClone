@@ -12,9 +12,10 @@ class MusicsViewModel: ObservableObject {
     @Published var genreSongs = [Result]()
     @Published var artistSongs = [Result]()
     @Published var searchedNameSongs = [Result]()
+    @Published var generalSearchResults = [Result]()
     
     init() {
-        
+
     }
     
     func getSongs(searchType: SearchType, term: String, limit: Int) {
@@ -25,7 +26,6 @@ class MusicsViewModel: ObservableObject {
             AF.request(url, method: .get).responseDecodable(of: Music.self) { response in
                 switch response.result {
                 case .success(let data):
-                    print("\n\n MARK: SUCCESS \n\n")
                     DispatchQueue.main.async { [weak self] in
                         self?.genreSongs = data.results
                     }
@@ -35,7 +35,7 @@ class MusicsViewModel: ObservableObject {
             }
             
         case .artist:
-            let url = "https://itunes.apple.com/search?term=\(term)&entity=song&attribute=artistTerm&limit=\(limit)"
+            let url = "https://itunes.apple.com/search?term=\(term.lowercased())&entity=song&attribute=artistTerm&limit=\(limit)"
             
             AF.request(url, method: .get).responseDecodable(of: Music.self) { response in
                 switch response.result {
@@ -49,7 +49,7 @@ class MusicsViewModel: ObservableObject {
             }
         
         case .songName:
-            let url = "https://itunes.apple.com/search?term=\(term)&entity=song&attribute=songTerm&limit=\(limit)"
+            let url = "https://itunes.apple.com/search?term=\(term.lowercased())&entity=song&attribute=songTerm&limit=\(limit)"
             
             AF.request(url, method: .get).responseDecodable(of: Music.self) { response in
                 switch response.result {
@@ -62,6 +62,19 @@ class MusicsViewModel: ObservableObject {
                 }
             }
             
+        case .generalSearch:
+            let url = "https://itunes.apple.com/search?term=\(term.lowercased())&entity=song&limit=\(limit)"
+            
+            AF.request(url, method: .get).responseDecodable(of: Music.self) { response in
+                switch response.result {
+                case .success(let data):
+                    DispatchQueue.main.async { [weak self] in
+                        self?.generalSearchResults = data.results
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
         }
     }
 }
