@@ -128,8 +128,8 @@ struct Home: View {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack(spacing: 16) {
-                                ForEach(1...6, id:\.self) { item in
-                                    MediumHStackItem()
+                                ForEach(musicsVM.searchedNameSongs.prefix(5)) { item in
+                                    MediumHStackItem(title: item.trackName, artist: item.artistName, imageUrl: item.artworkUrl60)
                                 }
                             }
                             .padding(.horizontal)
@@ -138,6 +138,9 @@ struct Home: View {
                         .padding(.bottom)
                     }
                     .padding(.bottom, 80)
+                    .onAppear {
+                        musicsVM.getSongs(searchType: .songName, term: "rain", limit: 10)
+                    }
                     
                     Spacer()
                 }

@@ -11,6 +11,7 @@ import Alamofire
 class MusicsViewModel: ObservableObject {
     @Published var genreSongs = [Result]()
     @Published var artistSongs = [Result]()
+    @Published var searchedNameSongs = [Result]()
     
     init() {
         
@@ -46,6 +47,21 @@ class MusicsViewModel: ObservableObject {
                     print(error)
                 }
             }
+        
+        case .songName:
+            let url = "https://itunes.apple.com/search?term=\(term)&entity=song&attribute=songTerm&limit=\(limit)"
+            
+            AF.request(url, method: .get).responseDecodable(of: Music.self) { response in
+                switch response.result {
+                case .success(let data):
+                    DispatchQueue.main.async { [weak self] in
+                        self?.searchedNameSongs = data.results
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            
         }
     }
 }
