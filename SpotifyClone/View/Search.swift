@@ -14,67 +14,91 @@ struct Search: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
+            ZStack(alignment: .top) {
                 Color.black.ignoresSafeArea()
                 
-                ScrollView {
-                    Text("Search")
-                        .font(.title)
-                        .fontWeight(.medium)
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding([.leading, .top])
-                        .padding(.bottom, -0.01) // SwiftUI beta bug-fix
-                    
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                            .font(.title3)
-                            .foregroundColor(.gray)
+                // MARK: Main Stack
+                VStack {
+                    // Sticky Header
+                    VStack {
+                        Text("Search")
+                            .font(.title)
+                            .fontWeight(.medium)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding([.leading, .top])
+                            .padding(.bottom, -0.01) // SwiftUI beta bug-fix
                         
-                        TextField("", text: $searchText)
-                            .placeholder(when: searchText.isEmpty) {
-                                Text("Artists or songs")
-                                    .font(.title3)
-                                    .fontWeight(.medium)
-                                    .foregroundColor(Color(uiColor: .darkGray))
-                            }
-                    }
-                    .padding(.vertical, 12)
-                    .padding(.horizontal)
-                    .background(.white)
-                    .padding([.horizontal, .bottom])
-                    
-                    LazyVStack {
-                        // Your favourites
-                        VStack(alignment: .leading) {
-                            Text("Your favourite genres")
-                                .fontWeight(.medium)
+                        HStack {
+                            Image(systemName: "magnifyingglass")
+                                .font(.title3)
+                                .foregroundColor(.gray)
                             
-                            LazyVGrid(columns: userColumns) {
-                                ForEach(UserFavouriteGenres.allCases, id:\.self) { item in
-                                    LargeGridItem(title: item.title, color: self.colors.randomElement() ?? .black)
+                            TextField("", text: $searchText)
+                                .placeholder(when: searchText.isEmpty) {
+                                    Text("Artists or songs")
+                                        .font(.title3)
+                                        .fontWeight(.medium)
+                                        .foregroundColor(Color(uiColor: .darkGray))
                                 }
-                            }
+                                .font(.title3)
+                                .fontWeight(.medium)
+                                .foregroundColor(.black)
                         }
+                        .padding(.vertical, 12)
+                        .padding(.horizontal)
+                        .background(.white)
                         .padding(.horizontal)
                     }
-                    .padding(.bottom)
                     
-                    LazyVStack {
-                        // Your favourites
-                        VStack(alignment: .leading) {
-                            Text("Explore all")
-                                .fontWeight(.medium)
-                            
-                            LazyVGrid(columns: userColumns) {
-                                ForEach(AllGenres.allCases, id:\.self) { item in
-                                    LargeGridItem(title: item.title, color: self.colors.randomElement() ?? .black)
+                    
+                    if searchText.isEmpty {
+                        ScrollView {
+                            LazyVStack {
+                                // Your favourites
+                                VStack(alignment: .leading) {
+                                    Text("Your favourite genres")
+                                        .fontWeight(.medium)
+                                        .padding(.top)
+                                    
+                                    LazyVGrid(columns: userColumns) {
+                                        ForEach(UserFavouriteGenres.allCases, id:\.self) { item in
+                                            LargeGridItem(title: item.title, color: self.colors.randomElement() ?? .black)
+                                        }
+                                    }
                                 }
+                                .padding(.horizontal)
                             }
+                            .padding(.bottom)
+                            
+                            LazyVStack {
+                                // Your favourites
+                                VStack(alignment: .leading) {
+                                    Text("Explore all")
+                                        .fontWeight(.medium)
+                                    
+                                    LazyVGrid(columns: userColumns) {
+                                        ForEach(AllGenres.allCases, id:\.self) { item in
+                                            LargeGridItem(title: item.title, color: self.colors.randomElement() ?? .black)
+                                        }
+                                    }
+                                }
+                                .padding(.horizontal)
+                            }
+                            .padding(.bottom, 76)
                         }
-                        .padding(.horizontal)
+                        .transition(AnyTransition.opacity.animation(.easeInOut))
+                    } else {
+                        VStack {
+                            Spacer()
+                            Text(searchText)
+                                .font(.largeTitle)
+                                .fontWeight(.medium)
+                                .foregroundColor(.white)
+                            Spacer()
+                        }
+                        .transition(AnyTransition.opacity.animation(.easeInOut))
                     }
-                    .padding(.bottom, 76)
                 }
             }
         }
