@@ -17,13 +17,10 @@ struct TabManager: View {
             switch navVM.selectedTab {
             case .home:
                 Home(musicsVM: musicsVM)
-                    .transition(AnyTransition.opacity.animation(.easeInOut))
             case .search:
                 Search(musicsVM: musicsVM)
-                    .transition(AnyTransition.opacity.animation(.easeInOut))
             case .library:
                 Text("Library View")
-                    .transition(AnyTransition.opacity.animation(.easeInOut))
             }
             
             // MARK: TabView
