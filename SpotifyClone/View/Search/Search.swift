@@ -75,7 +75,7 @@ struct Search: View {
                         } else {
                             VStack {
                                 Spacer()
-                                Text("Search something 🥳")
+                                Text("Searching for:")
                                     .font(.largeTitle)
                                     .fontWeight(.medium)
                                     .foregroundColor(.white)
@@ -86,7 +86,7 @@ struct Search: View {
                 }
             }
         }
-        
+        .transition(AnyTransition.opacity.animation(.easeInOut))
     }
 }
 

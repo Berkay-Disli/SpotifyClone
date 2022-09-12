@@ -146,7 +146,7 @@ struct Home: View {
                 }
             }
         }
-        
+        .transition(AnyTransition.opacity.animation(.easeInOut))
     }
 }
 

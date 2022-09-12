@@ -10,10 +10,6 @@ import Foundation
 class NavigationViewModel: ObservableObject {
     @Published var selectedTab: Tabs = .home
     
-    init() {
-        
-    }
-    
     func selectTab(tab: Tabs) {
         selectedTab = tab
     }
