@@ -178,7 +178,7 @@ enum AllGenres: String, CaseIterable {
         case .ambient:
             return "Ambient"
         case .freshFinds:
-            return "FreshFinds"
+            return "Fresh Finds"
         }
     }
 }
